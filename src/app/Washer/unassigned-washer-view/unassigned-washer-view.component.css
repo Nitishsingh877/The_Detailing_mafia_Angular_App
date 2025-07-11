@@ -1,0 +1,26 @@
+.unassigned-orders .card {
+    border-radius: 16px;
+  }
+  
+  .unassigned-orders .card-header {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  
+  .table-container {
+    max-height: 575px;
+    overflow-y: auto;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .badge {
+    font-size: 0.85rem;
+    padding: 0.5em 0.75em;
+    border-radius: 1rem;
+  }
+  

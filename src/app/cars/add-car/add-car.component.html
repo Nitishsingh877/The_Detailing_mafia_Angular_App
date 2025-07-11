@@ -1,0 +1,19 @@
+<div class="add-car-container">
+    <h2>Add a New Car</h2>
+    <form (ngSubmit)="addCar()">
+      <div class="form-group">
+        <label>Brand</label>
+        <input [(ngModel)]="carForm.brand" name="brand" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label>Model</label>
+        <input [(ngModel)]="carForm.model" name="model" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label>License Plate</label>
+        <input [(ngModel)]="carForm.licenseNumberPlate" name="licenseNumberPlate" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Car</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <mat-card>
+        <mat-card-header class="text-center">
+          <fa-icon [icon]="sb"></fa-icon>
+          <mat-card-title class="fw-bold">Place a Car Wash Order</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Select Car</mat-label>
+            <mat-select [(ngModel)]="selectedCarId" required>
+              <mat-option *ngIf="cars.length === 0" disabled>No cars found</mat-option>
+              <mat-option *ngFor="let car of cars" [value]="car.carId">
+                {{ car.brand }} - {{ car.model }} ({{ car.licenseNumberPlate }})
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+
+          <!-- Wash type selection -->
+          <mat-radio-group [(ngModel)]="washType" class="mt-3">
+            <mat-radio-button value="INSTANT">Instant Wash</mat-radio-button>
+            <mat-radio-button value="SCHEDULED" class="ms-3">Schedule Wash</mat-radio-button>
+          </mat-radio-group>
+
+          <!-- Schedule date/time inputs -->
+          <div *ngIf="washType === 'SCHEDULED'" class="mt-3">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Pick a Date</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="scheduleDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="w-100 mt-2" appearance="outline">
+              <mat-label>Select Time</mat-label>
+              <input matInput type="time" [(ngModel)]="scheduleTime" required />
+            </mat-form-field>
+          </div>
+
+          <div class="text-center mt-4">
+            <button mat-raised-button color="primary" (click)="addOrder()">Place Order</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

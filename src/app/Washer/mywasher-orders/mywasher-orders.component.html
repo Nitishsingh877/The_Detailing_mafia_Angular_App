@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>My Washer Past Orders</h3>
+  
+    <div *ngIf="loading">Loading orders...</div>
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+    <table *ngIf="washerOrders.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Order ID</th>
+          <th>Customer Email</th>
+          <th>Status</th>
+          <th>Payment Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of washerOrders; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ order.carId}}</td>
+          <td>{{ order.customerEmail }}</td>
+          <td>{{ order.status }}</td>
+          <!-- <td>{{ order.paymentStatus }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="washerOrders.length === 0 && !loading">No past orders found.</div>
+  </div>
+  

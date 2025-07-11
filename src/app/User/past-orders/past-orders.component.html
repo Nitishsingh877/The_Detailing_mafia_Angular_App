@@ -1,0 +1,32 @@
+<div class="container pt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3>PAST ORDERS</h3>
+      </div>
+      <div class="card-body" style="height: 575px; overflow-y: auto;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Customer Email</th>
+              <th>Status</th>
+              <th>Car</th>
+              <th>Completed Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orderList; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ order.washerEmail }}</td>
+              <td>{{ order.status }}</td>
+              <td>{{ order.carId }} {{ order.cars?.model }}</td>
+              <td>
+                {{ order.scheduledTime ? (order.scheduledTime | date:'short') : (order.createdAt | date:'short') }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,13 @@
+.car-list-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .car-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  

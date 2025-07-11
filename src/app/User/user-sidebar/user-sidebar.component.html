@@ -1,0 +1,36 @@
+<mat-action-list>
+    <div mat-subheader><b>USER</b></div>
+  
+    <button mat-list-item [routerLink]="['/home']">
+      <fa-icon [icon]="home" style="position:relative; right: 0.2cm;"></fa-icon>Home
+    </button>
+  
+    <button mat-list-item [routerLink]="['/user/add/car']">
+      <fa-icon [icon]="box" style="position:relative; right: 0.2cm;"></fa-icon>Add Car
+    </button>
+    
+    <button mat-list-item [routerLink]="['/user/view/cars']">
+      <fa-icon [icon]="box" style="position:relative; right: 0.2cm;"></fa-icon>View Cars
+    </button>
+    
+  
+    <button mat-list-item [routerLink]="['/user/addOrder']">
+      <fa-icon [icon]="plus" style="position:relative; right: 0.2cm;"></fa-icon>Create Order
+    </button>
+  
+    <button mat-list-item [routerLink]="['/user/myorders']">
+      <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>My Current Orders
+    </button>
+    <button mat-list-item [routerLink]="['/user/past-orders']">
+      <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>My Past Orders
+    </button>
+  
+    <button mat-list-item [routerLink]="['/aboutus']">
+      <fa-icon [icon]="info" style="position:relative; right: 0.2cm;"></fa-icon>About
+    </button>
+  
+    <button mat-list-item [routerLink]="['/contact']">
+      <fa-icon [icon]="phone" style="position:relative; right: 0.2cm;"></fa-icon>Contact
+    </button>
+  </mat-action-list>
+  

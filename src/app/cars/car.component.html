@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Your Cars</h2>
+  
+    <div *ngIf="cars.length === 0">No cars found.</div>
+  
+    <div *ngFor="let car of cars" class="card mt-3 p-3">
+      <h4>{{ car.brand }} {{ car.model }}</h4>
+      <p><strong>License:</strong> {{ car.licenseNumberPlate }}</p>
+      <button class="btn btn-primary btn-sm" (click)="selectCar(car)">Edit</button>
+    </div>
+  
+    <hr />
+  
+    <h3>{{ selectedCar ? 'Edit Car' : 'Add New Car' }}</h3>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Brand:</label>
+        <input [(ngModel)]="carForm.brand" name="brand" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Model:</label>
+        <input [(ngModel)]="carForm.model" name="model" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label>License Number Plate:</label>
+        <input [(ngModel)]="carForm.licenseNumberPlate" name="licenseNumberPlate" class="form-control" required />
+      </div>
+  
+      <button class="btn btn-success mt-3" type="submit">{{ selectedCar ? 'Update' : 'Add' }}</button>
+      <button class="btn btn-secondary mt-3 ml-2" type="button" (click)="resetForm()">Clear</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper">
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-6 offset-md-3">
+                <mat-card>
+                    <mat-card-header class="text-center">
+                        <div class="container text-center">
+                            <fa-icon [icon]="lock"></fa-icon>
+                            <mat-card-title style="font-weight: bold;">LOGIN</mat-card-title>
+                        </div>
+                    </mat-card-header>
+                    <mat-card-content class="text-center">
+                        <form #f1="ngForm" (ngSubmit)="f1.form.valid && login()">
+
+                            <div class="alert alert-danger" *ngIf="errorMessage">
+                                {{errorMessage}}
+                            </div>
+                            <p>
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="email" placeholder="Email" required
+                                       #email="ngModel"
+                                        [class.is-invalid]="email.invalid && email.touched" name="email" id="email"
+                                        [(ngModel)]=user.email>
+
+                                    <mat-error *ngIf="email.errors?.['required']">
+                                        Email is required
+                                    </mat-error>
+                                    <mat-error *ngIf="email.errors?.['pattern']">
+                                        Enter correct email
+                                    </mat-error>
+                                </mat-form-field>
+                            </p>
+                            <p>
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput type="password" placeholder="Password" id="password" name="password"
+                                        [class.is-invalid]="password.invalid && password.touched"
+                                        [(ngModel)]="user.password" #password="ngModel" required>
+                                    <mat-error *ngIf="password.errors?.['required']">
+                                        Password is required
+                                    </mat-error>
+                                </mat-form-field>
+                            </p>
+                            <div class="container text-center">
+                                <button type="submit" mat-raised-button color="accent" style="min-width: 100px; font-family: 'Quicksand', sans-serif;">
+                                    Login
+                                </button>
+                                <button [routerLink]="['/register']" mat-raised-button style="min-width: 100px; margin-left: 20px; background-color: rgb(112, 196, 235); font-family: 'Quicksand', sans-serif;" >
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

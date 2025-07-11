@@ -1,0 +1,55 @@
+<div class="container unassigned-orders">
+  <div class="pt-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">Unassigned Orders</h3>
+      </div>
+      <div class="card-body table-container">
+        <table class="table table-hover table-striped align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Customer</th>
+              <th>Status</th>
+              <th>Payemnt Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of OrderList; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ order.customerEmail }}</td>
+              <td>{{ order.status || '-' }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'bg-warning text-dark': order.status === 'PENDING',
+                    'bg-success': order.status === 'ACCEPTED',
+                    'bg-danger': order.status === 'DECLINED'
+                  }">
+                  {{ order.paymentStatus }}
+                </span>
+              </td>
+              <td>
+                <button
+                  *ngIf="order.status === 'ASSIGNED'"
+                  class="btn btn-success btn-sm me-1"
+                  (click)="acceptOrder(+order.orderId)">
+                  Accept
+                </button>
+                <button
+                  *ngIf="order.status === 'ASSIGNED'"
+                  class="btn btn-danger btn-sm"
+                  (click)="declineOrder(+order.orderId)">
+                  Decline
+                </button>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

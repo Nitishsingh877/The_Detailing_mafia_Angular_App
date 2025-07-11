@@ -1,0 +1,58 @@
+/* mywasher-orders.component.css */
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* light gray */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  h3 {
+    margin-bottom: 25px;
+    color: #007bff; /* bootstrap primary blue */
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .table {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f1f5fb;
+  }
+  
+  .alert {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  div[ng-reflect-ng-if] {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 15px;
+  }
+  

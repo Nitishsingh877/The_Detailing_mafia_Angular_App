@@ -1,0 +1,18 @@
+<mat-action-list >
+    <div mat-subheader><b>WASHER</b></div>
+    <button mat-list-item [routerLink]="['/home']">
+    <fa-icon [icon]="home" style="position:relative; right: 0.2cm;"></fa-icon>Home
+    </button>
+    <button mat-list-item [routerLink]="['/washer/notAssigned']">
+    <fa-icon [icon]="un" style="position:relative; right: 0.2cm;"></fa-icon>Unassigned 
+    </button>
+    <button mat-list-item [routerLink]="['/washer/past']">
+    <fa-icon [icon]="shoppingbag" style="position:relative; right: 0.2cm;"></fa-icon>My Orders
+    </button>
+    <button mat-list-item [routerLink]="['/aboutus']">
+    <fa-icon [icon]="info" style="position:relative; right: 0.2cm;"></fa-icon>About
+    </button>
+    <button mat-list-item [routerLink]="['/contact']">
+    <fa-icon [icon]="phone" style="position:relative; right: 0.2cm;"></fa-icon>Contact
+    </button>
+</mat-action-list>

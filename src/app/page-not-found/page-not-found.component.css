@@ -1,0 +1,33 @@
+body{
+  padding: 0%;
+  margin: 0%;
+}
+.container{
+  margin-left: 95px;
+  text-align: center;
+  color: #343434;
+  position:absolute;
+  width:100%;
+  top: 35%;
+  
+}
+.container h1{
+  font-size: 160px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+}
+.container a:hover, a:active {
+  background-color: rgb(88, 189, 150);
+}
+.container a{
+  text-decoration: none;
+  background: #e55039aa;
+  color: #fff;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.4s;
+}

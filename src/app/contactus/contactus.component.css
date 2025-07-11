@@ -1,0 +1,19 @@
+
+.container{
+    padding-bottom: 50px;
+}
+.container-fluid{
+    padding: 35px;
+    text-align: center;
+}
+.heading{
+    font-size: 60px;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+.col-sm-5{
+    margin-top: 100px;
+    text-align: left;
+}

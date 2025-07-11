@@ -1,0 +1,15 @@
+<nav class="navbar sticky-top navbar-dark bg-dark" >
+    <button mat-icon-button style="color: aquamarine; margin-left: 15px;" (click)="gotoHome();" aria-label="Button to go to home screen">
+    <mat-icon>local_car_wash</mat-icon>
+    </button>
+    <span style="color: aquamarine; position: relative; left: 2cm; font-family: 'Quicksand', sans-serif; font-stretch: expanded;"><b>The &nbsp;&nbsp; Detailing &nbsp;&nbsp;Mafia</b></span>
+    <div *ngIf="!currentUser?.userRole">
+    <button mat-flat-button style="background-color:aquamarine;" [routerLink]="['/login']" routerLinkActive="active" >Login</button>
+    <button type="button" mat-raised-button color="primary" (click)="aboutus();" >About</button>
+    <button type="button" mat-raised-button color="primary" (click)="contactus();" >Contact</button>
+  </div>
+    <div *ngIf="currentUser?.userRole">
+        <button mat-stroked-button color="basic" (click)="properRole()" routerLinkActive="active" style="color: white;"><b>{{currentUser.name}}</b></button>
+        <button mat-raised-button color="accent" (click)="logOut()"  routerLinkActive="active" >Log Out</button>
+    </div>
+</nav>
